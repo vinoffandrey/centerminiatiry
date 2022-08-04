@@ -1805,7 +1805,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .main__section {
-  background: url("../img/background_image/background_main.png");
+  background-image: url("../img/background_image/background_main.png");
   background-position: center;
   background-size: cover;
   height: calc(100vh - 130px);

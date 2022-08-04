@@ -1,0 +1,450 @@
+//====================================================================================================
+@keyframes opacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+//====================================================================================================
+.card-preview-slider {
+	.swiper {
+		width: 300px;
+		position: relative;
+		height: 200px;
+	}
+	.swiper-slide {
+		display: block;
+		@media (any-hover: hover) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			transition: opacity 0.1s ease-in-out;
+			&._active {
+				opacity: 1;
+			}
+		}
+	}
+	.swiper-pagination {
+		.swiper-pagination-bullet {
+			background: red;
+		}
+	}
+	&__list {
+		@media (any-hover: hover) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			z-index: 1;
+			pointer-events: none;
+			opacity: 0;
+			grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__item {
+		height: 100%;
+		position: relative;
+		pointer-events: auto;
+		cursor: pointer;
+		&._active {
+			&::before {
+				background: red;
+			}
+		}
+		&:not(:last-child) {
+			&::before {
+				border-right: 1px solid #000;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			height: 5px;
+			background: grey;
+			pointer-events: none;
+		}
+	}
+}
+
+// Main__section
+//=======================================================================================================
+.page {
+	background-color: $backgroundColor;
+}
+.main {
+
+	&__section {
+		background: url('../img/background_image/background_main.png');
+		background-position: center;
+		background-size: cover;
+		height: calc(100vh - 130px);
+		min-height: 320px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-title {
+		h2 {
+			max-width: 780px;
+			margin: 0 auto;
+			color: white;
+			text-transform: uppercase;
+			font-weight: 700;
+			@include adaptiveValue("font-size", 30, 20, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 50, 30, $containerWidth,$minWidth, 1);
+			text-align: center;
+			@include adaptiveValue("margin-bottom", 30, 15, $containerWidth,$minWidth, 1);
+		}
+	}
+
+	&-text {
+		p {
+			color: white;
+			font-weight: 500;
+			@include adaptiveValue("font-size", 15, 14, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 20, 15, $containerWidth,$minWidth, 1);
+			text-align: center;
+			@include adaptiveValue("margin-bottom", 38, 25, $containerWidth,$minWidth, 1);
+		}
+	}
+
+	&-button {
+		text-align: center;
+		.button {
+			margin-left: 0;
+		}
+	}
+}
+
+
+// About__section
+//=======================================================================================================
+
+.about {
+
+	&__section {
+	}
+
+	&__container {
+		display: flex;
+		@media(max-width:$mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__swiper {
+	}
+}
+.about-left {
+	flex: 1 1 50%;
+	@include adaptiveValue("margin-right", 72, 0, $containerWidth,$minWidth, 1);
+	@media(max-width:$mobile) {
+		flex: 1 1 100%;
+	}
+}
+.about-title {
+}
+.title {
+}
+.about-text {
+	@include adaptiveValue("margin-top", 15, 7, $containerWidth,$minWidth, 1);
+	p {
+		color: $mainColor;
+			font-weight: 500;
+			@include adaptiveValue("font-size", 15, 14, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 30, 25, $containerWidth,$minWidth, 1);
+	}
+}
+.about-right {
+	flex: 0 1 50%;
+	min-width: 0;
+	@media(max-width:$mobile) {
+		flex: 1 1 100%;
+		@include adaptiveValue("margin-top", 30, 20, $containerWidth,$minWidth, 1);
+	}
+}
+.about-right-wrapper {
+	@include adaptiveValue("height", 265, 200, $containerWidth,$minWidth, 1);
+}
+.about-images {
+}
+.about-item {
+	img {
+		border-radius: 5px;
+		display: none;
+		cursor: pointer;
+			.vsc-initialized & {
+				display: block;
+			}
+	}
+}
+.about-swiper {
+
+	&__mini {
+		@include adaptiveValue("margin-top", 27, 15, $containerWidth,$minWidth, 1);
+	}
+
+	&__mini-wrapper {
+	}
+}
+.about-mini {
+
+	&__swiper {
+	}
+}
+.about-item-mini {
+	cursor: pointer;
+	max-width: 100%;
+	@include adaptiveValue("height", 79, 60, $containerWidth,$minWidth, 1);
+	@media(max-width: $mobileSmall) {
+		height: 75px;
+	}
+	img {
+		border-radius: 5px;
+		max-width: 100%;
+		display: none;
+			.vsc-initialized & {
+				display: block;
+			}
+	}
+}
+
+// Awards__section
+//=======================================================================================================
+
+.awards {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__slider {
+		@include adaptiveValue("padding-top", 25, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 25, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__swiper {
+	}
+
+	&__slider-item {
+		img {
+			width: 100%;
+			border-radius: 5px;
+			cursor: pointer;
+			display: none;
+			.vsc-initialized & {
+				display: block;
+			}
+		}
+	}
+}
+.awards-title {
+}
+.title {
+}
+.swiper {
+}
+
+// Photo__section
+//=======================================================================================================
+
+
+.photo {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__slider {
+		@include adaptiveValue("padding-top", 25, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 25, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__swiper {
+	}
+
+	&__slider-item {
+		img {
+			width: 100%;
+			cursor: pointer;
+			border-radius: 5px;
+			display: none;
+			.vsc-initialized & {
+				display: block;
+			}
+		}
+	}
+	&-button {
+		display: flex;
+		justify-content: center;
+		.button {
+			margin-left: 0;
+			@include adaptiveValue("padding-left", 47, 35, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("padding-right", 47, 35, $containerWidth,$minWidth, 1);
+		}
+	}
+}
+.photo-title {
+}
+.title {
+}
+.swiper {
+}
+
+
+// History__section
+//=======================================================================================================
+
+.history {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("padding-top", 25, 20, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&-title {
+	}
+
+	&-left {
+		img {
+			@include adaptiveValue("width", 360, 250, $containerWidth,$minWidth, 1);
+			min-width: 180px;
+			pointer-events: none;
+		}
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&-right {
+		@include adaptiveValue("padding-left", 30, 20, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+			padding-left: 0;
+			padding-top: 20px;
+		}
+		p {
+			color: $mainColor;
+			font-weight: 500;
+			@include adaptiveValue("font-size", 15, 14, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 30, 25, $containerWidth,$minWidth, 1);
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+			}
+		}
+	}
+}
+
+// Contacts__section
+//=======================================================================================================
+
+
+
+.contacts {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		@include adaptiveValue("padding-top", 25, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 25, 20, $containerWidth,$minWidth, 1);
+		@media(max-width: 650px) {
+			flex-wrap: wrap;
+		}
+	}
+}
+.contacts-title {
+}
+.title {
+}
+.contacts-left {
+	@include adaptiveValue("margin-right", 130, 20, $containerWidth, 767, 1);
+	@media(max-width: 650px) {
+		flex: 1 1 100%;
+	}
+	&__body {
+	}
+
+	&__item {
+		@include adaptiveValue("margin-bottom", 25, 15, $containerWidth,$minWidth, 1);
+		a {
+			color: $mainColor;
+			font-weight: 500;
+			@include adaptiveValue("font-size", 15, 14, $containerWidth,$minWidth, 1);
+			text-transform: none;
+			display: flex;
+			align-items: center;
+			&:before {
+				@include adaptiveValue("margin-right", 20, 15, $containerWidth,$minWidth, 1);
+				color: black;
+				top: 2px;
+				position: relative;
+				font-size: 16px;
+			}
+			@media (any-hover: hover){
+				&:hover{
+					color: black; 
+				} 
+			}
+		}
+	}
+
+	&__button {
+		@include adaptiveValue("margin-top", 60, 30, $containerWidth,$minWidth, 1);
+	}
+}
+.button {
+}
+.contacts-right {
+	flex: 1 1 auto;
+	max-width: 100%;
+	height: auto;
+	@media(max-width: 650px) {
+		flex: 1 1 100%;
+		@include adaptiveValue("margin-top", 60, 30, $containerWidth,$minWidth, 1);
+	}
+	iframe {
+		width: 100%;
+		@include adaptiveValue("height", 344, 150, $containerWidth,$minWidth, 1);
+		border-radius: 5px;
+	}
+}

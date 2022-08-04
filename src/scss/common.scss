@@ -1,0 +1,30 @@
+// Заголовки, общие БЄМ блоки и проче...
+.button {
+	font-family: $fontFamily;
+	@include adaptiveValue("font-size", 12, 11, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("line-height", 15, 7, $containerWidth, $minWidth, 1);
+	font-weight: 600;
+	color: $greyColor;
+	@include adaptiveValue("padding-right", 28, 20, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-left", 28, 20, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-top", 10, 10, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 10, 10, $containerWidth, $minWidth, 1);
+	background-color: $yellowColor;
+	transition: all 0.3s ease 0s;
+	text-transform: uppercase;
+	border-radius: 5px;
+	@media (any-hover: hover) {
+		&:hover {
+			-webkit-box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+			-moz-box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+			box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+		}
+	}
+}
+.title {
+	text-transform: uppercase;
+	color: black;
+	@include adaptiveValue("font-size", 30, 25, 1, $containerWidth, $minWidth, 1);
+	font-weight: 700;
+}
+//========================================================================================================================================================

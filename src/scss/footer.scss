@@ -1,0 +1,17 @@
+//====================================================================================================
+.footer {
+	background-color: $footerColor;
+	&__container {
+	}
+
+	&__text {
+		color: white;
+		@include adaptiveValue("font-size", 12, 11, $containerWidth,$minWidth, 1);
+		line-height: 15px;
+		font-weight: 600;
+		@include adaptiveValue("padding-top", 20, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 20, 15, $containerWidth,$minWidth, 1);
+	}
+}
+
+//====================================================================================================

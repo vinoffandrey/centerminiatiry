@@ -5188,9 +5188,9 @@
             loop: !0,
             lazy: !0,
             breakpoints: {
-              320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !0 },
+              320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !1 },
               400: { slidesPerView: 2, spaceBetween: 20 },
-              692: { slidesPerView: 3, spaceBetween: 20 },
+              692: { slidesPerView: 3, spaceBetween: 20, autoHeight: !1 },
               1268: { slidesPerView: 4, spaceBetween: 30 },
             },
             on: {},
@@ -5210,7 +5210,7 @@
             loop: !0,
             lazy: !0,
             breakpoints: {
-              320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !0 },
+              320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !1 },
               400: { slidesPerView: 2, spaceBetween: 20 },
               692: { slidesPerView: 3, spaceBetween: 20 },
               1268: { slidesPerView: 4, spaceBetween: 30 },

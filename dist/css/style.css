@@ -1389,7 +1389,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 @media (max-width: 35em) {
   .header__top-button {
-    margin-right: 0;
+    margin-right: 0 !important;
     margin: 30px 0;
   }
 }

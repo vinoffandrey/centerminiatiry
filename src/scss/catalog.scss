@@ -114,6 +114,7 @@
 	}
 
 	&__body-title {
+		text-align: center;
 		@include adaptiveValue("margin-top", 20, 15, $containerWidth,$minWidth, 1);
 		@include adaptiveValue("margin-bottom", 20, 15, $containerWidth,$minWidth, 1);
 	}

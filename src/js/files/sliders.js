@@ -186,6 +186,104 @@ function initSliders() {
 			}
 		});
 	}
+
+	if (document.querySelector('.resemble__swiper')) {
+		new Swiper('.product__resemble-body', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Pagination, Autoplay],
+			effect: 'fade',
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			observer: true,
+			observeParents: true,
+			slidesPerView: 3,
+			slidesPerGroup: 1,
+			spaceBetween: 32,
+			autoHeight: false,
+			speed: 800,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			lazy: true,
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: false,
+				},
+				600: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				692: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+			},
+
+			on: {
+
+			}
+		});
+	}
+
+	if (document.querySelector('.product__swiper')) {
+		new Swiper('.product__left', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Pagination, Autoplay],
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+			spaceBetween: 32,
+			autoHeight: false,
+			speed: 800,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			lazy: true,
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: false,
+				},
+				600: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				692: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 1,
+					spaceBetween: 30,
+				},
+			},
+
+			on: {
+
+			}
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {

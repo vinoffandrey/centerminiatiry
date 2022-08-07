@@ -1,0 +1,183 @@
+.product {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__title {
+		position: absolute;
+		top: -30px;
+		@media(max-width: $mobile) {
+		top: 0;
+		position: relative;
+		@include adaptiveValue("margin-bottom", 20, 15, $containerWidth,$minWidth, 1);
+		}
+	}
+
+	&__body {
+		display: flex;
+		background-color: #fff;
+		border: 1px solid #EDEBDE;
+		border-radius: 5px;
+		@include adaptiveValue("margin-top", 90, 40, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 40, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 200, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-left", 40, 20, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__left {
+		max-width: 600px;
+		position: relative;
+		top: -30px;
+		@include adaptiveValue("width", 600, 0, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-right", 35, 20, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+			max-width: 100%;
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+			top: 0;
+			@include adaptiveValue("margin-top", 20, 15, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("margin-bottom", 20, 15, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("height", 300, 150, $containerWidth,$minWidth, 1);
+		}
+	}
+
+	&__left-body {
+	}
+
+	&__left-item {
+		cursor: pointer;
+	}
+
+	&__right {
+		position: relative;
+		flex: 1 1 calc(100% - 600px);
+		@media(max-width: $mobile) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__right-body {
+		@include adaptiveValue("padding-top", 25, 15, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			padding-top: 0;
+		}
+	}
+
+	&__right-item {
+		display: flex;
+		justify-content: space-between;
+		p {
+			text-transform: uppercase;
+			color: $greyColor;
+			font-weight: 600;
+			@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("font-size", 12, 12, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 15, 15, $containerWidth,$minWidth, 1);
+			&:not(:first-child) {
+				text-align: right;
+			}
+			&:not(:last-child) {
+				text-align: left;
+				padding-right: 15px;
+			}
+		}
+	}
+
+	&__right-text {
+		p {
+			color: $mainColor;
+			font-weight: 500;
+			@include adaptiveValue("margin-top", 5, 5, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("font-size", 15, 13, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 30, 20, $containerWidth,$minWidth, 1);
+		}
+	}
+
+	&__right-price {
+		@include adaptiveValue("margin-top", 25, 15, $containerWidth,$minWidth, 1);
+		p {
+			text-transform: uppercase;
+			color: $greyColor;
+			font-weight: 600;
+			@include adaptiveValue("margin-bottom", 10, 5, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("font-size", 12, 12, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 15, 15, $containerWidth,$minWidth, 1);
+		}
+		span {
+			text-transform: uppercase;
+			color: black;
+			font-weight: 700;
+			@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("font-size", 20, 15, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("line-height", 24, 15, $containerWidth,$minWidth, 1);
+		}
+	}
+
+	&__right-button {
+		display: inline-block;
+		@include adaptiveValue("margin-top", 20, 10, $containerWidth,$minWidth, 1);
+		button {
+			text-transform: uppercase;
+		}
+	}
+
+	&__resemble-title {
+		@include adaptiveValue("margin-top", 70, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__resemble-body {
+		@include adaptiveValue("margin-top", 40, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 40, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__resemble-swiper {
+	}
+
+	&__resemble-item {
+		background-color: white;
+		border: 1px solid #EDEBDE;
+		border-radius: 5px;
+		transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				border: 1px solid $yellowColor;
+			} 
+		}
+	}
+
+	&__resemble-link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__resemble-image {
+		max-width: 320px;
+		width: 100%;
+		height: 205px;
+		max-height: 205px;
+		min-height: 150px;
+		img {
+			padding: 15px;
+		}
+		
+	}
+
+	&__resemble-subtitle {
+		text-align: center;
+		@include adaptiveValue("margin-top", 20, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 20, 15, $containerWidth,$minWidth, 1);
+	}
+}
+.title {
+}

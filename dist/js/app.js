@@ -131,19 +131,19 @@
                     .replace(/^\s+/, "")
                     .replace(/\s+$/, ""));
             },
-            M = function (e) {
+            P = function (e) {
               return e.llTempImage;
             },
-            A = function (e, t) {
+            M = function (e, t) {
               if (t) {
                 var i = t._observer;
                 i && i.unobserve(e);
               }
             },
-            k = function (e, t) {
+            A = function (e, t) {
               e && (e.loadingCount += t);
             },
-            P = function (e, t) {
+            k = function (e, t) {
               e && (e.toLoadCount = t);
             },
             D = function (e) {
@@ -158,8 +158,8 @@
             G = function (e, t) {
               D(e).forEach(t);
             },
-            F = [d],
-            V = [d, h],
+            V = [d],
+            F = [d, h],
             H = [d, c, u],
             N = [g],
             q = function (e) {
@@ -193,7 +193,7 @@
             W = function (e, t, i) {
               z(e, t.class_loading),
                 E(e, m),
-                i && (k(i, 1), O(t.callback_loading, e, i));
+                i && (A(i, 1), O(t.callback_loading, e, i));
             },
             Z = function (e, t, i) {
               i && e.setAttribute(t, i);
@@ -212,13 +212,13 @@
                   U(e, t);
               },
               IFRAME: function (e, t) {
-                j(e, F), Z(e, d, S(e, t.data_src));
+                j(e, V), Z(e, d, S(e, t.data_src));
               },
               VIDEO: function (e, t) {
                 G(e, function (e) {
-                  j(e, F), Z(e, d, S(e, t.data_src));
+                  j(e, V), Z(e, d, S(e, t.data_src));
                 }),
-                  j(e, V),
+                  j(e, F),
                   Z(e, h, S(e, t.data_poster)),
                   Z(e, d, S(e, t.data_src)),
                   e.load();
@@ -261,15 +261,15 @@
               !(function (e) {
                 delete e.llTempImage;
               })(e),
-                k(i, -1),
+                A(i, -1),
                 (function (e) {
                   e && (e.toLoadCount -= 1);
                 })(i),
                 $(e, t.class_loading),
-                t.unobserve_completed && A(e, i);
+                t.unobserve_completed && M(e, i);
             },
             oe = function (e, t, i) {
-              var s = M(e) || e;
+              var s = P(e) || e;
               ie(s) ||
                 (function (e, t, i) {
                   ie(e) || (e.llEvLisnrs = {});
@@ -315,7 +315,7 @@
                     r = o && n ? n : s;
                   r &&
                     ((e.style.backgroundImage = 'url("'.concat(r, '")')),
-                    M(e).setAttribute(d, r),
+                    P(e).setAttribute(d, r),
                     W(e, t, i));
                 })(e, t, i),
                 (function (e, t, i) {
@@ -328,7 +328,7 @@
                       z(e, t.class_applied),
                         E(e, v),
                         i &&
-                          (t.unobserve_completed && A(e, t),
+                          (t.unobserve_completed && M(e, t),
                           O(t.callback_applied, e, i));
                     })(e, t, i));
                 })(e, t, i);
@@ -358,13 +358,13 @@
             ce = {
               IMG: de,
               IFRAME: function (e) {
-                Y(e, F);
+                Y(e, V);
               },
               VIDEO: function (e) {
                 G(e, function (e) {
-                  Y(e, F);
+                  Y(e, V);
                 }),
-                  Y(e, V),
+                  Y(e, F),
                   e.load();
               },
               OBJECT: function (e) {
@@ -413,7 +413,7 @@
                         z(e, i.class_entered),
                         $(e, i.class_exited),
                         (function (e, t, i) {
-                          t.unobserve_entered && A(e, i);
+                          t.unobserve_entered && M(e, i);
                         })(e, i, s),
                         O(i.callback_enter, e, t, s),
                         n || ae(e, i, s);
@@ -436,7 +436,7 @@
                             })(e),
                             de(e),
                             $(e, i.class_loading),
-                            k(s, -1),
+                            A(s, -1),
                             T(e),
                             O(i.callback_cancel, e, t, s));
                         })(e, t, i, s),
@@ -500,7 +500,7 @@
                   n,
                   o = this._settings,
                   r = ye(e, o);
-                P(this, r.length),
+                k(this, r.length),
                   !i && s
                     ? pe(o)
                       ? (function (e, t, i) {
@@ -516,7 +516,7 @@
                                   E(e, b);
                               })(e, t, i);
                           }),
-                            P(i, 0);
+                            k(i, 0);
                         })(r, o, this)
                       : ((n = r),
                         (function (e) {
@@ -543,7 +543,7 @@
                 var t = this,
                   i = this._settings;
                 ye(e, i).forEach(function (e) {
-                  A(e, t), ae(e, i, t);
+                  M(e, t), ae(e, i, t);
                 });
               },
               restoreAll: function () {
@@ -1804,7 +1804,7 @@
         ? e instanceof HTMLElement
         : e && (1 === e.nodeType || 11 === e.nodeType);
     }
-    function M() {
+    function P() {
       const e = Object(arguments.length <= 0 ? void 0 : arguments[0]),
         t = ["__proto__", "constructor", "prototype"];
       for (let i = 1; i < arguments.length; i += 1) {
@@ -1819,19 +1819,19 @@
               (z(e[n]) && z(s[n])
                 ? s[n].__swiper__
                   ? (e[n] = s[n])
-                  : M(e[n], s[n])
+                  : P(e[n], s[n])
                 : !z(e[n]) && z(s[n])
-                ? ((e[n] = {}), s[n].__swiper__ ? (e[n] = s[n]) : M(e[n], s[n]))
+                ? ((e[n] = {}), s[n].__swiper__ ? (e[n] = s[n]) : P(e[n], s[n]))
                 : (e[n] = s[n]));
           }
         }
       }
       return e;
     }
-    function A(e, t, i) {
+    function M(e, t, i) {
       e.style.setProperty(t, i);
     }
-    function k(e) {
+    function A(e) {
       let { swiper: t, targetPosition: i, side: s } = e;
       const n = y(),
         o = -t.translate;
@@ -1861,11 +1861,11 @@
         };
       u();
     }
-    let P, D, B;
+    let k, D, B;
     function G() {
       return (
-        P ||
-          (P = (function () {
+        k ||
+          (k = (function () {
             const e = y(),
               t = f();
             return {
@@ -1891,10 +1891,10 @@
               gestures: "ongesturestart" in e,
             };
           })()),
-        P
+        k
       );
     }
-    function F(e) {
+    function V(e) {
       return (
         void 0 === e && (e = {}),
         D ||
@@ -1942,7 +1942,7 @@
         D
       );
     }
-    function V() {
+    function F() {
       return (
         B ||
           (B = (function () {
@@ -2123,8 +2123,8 @@
             : c.css({ marginRight: "", marginBottom: "", marginTop: "" }),
           s.centeredSlides &&
             s.cssMode &&
-            (A(e.wrapperEl, "--swiper-centered-offset-before", ""),
-            A(e.wrapperEl, "--swiper-centered-offset-after", ""));
+            (M(e.wrapperEl, "--swiper-centered-offset-before", ""),
+            M(e.wrapperEl, "--swiper-centered-offset-after", ""));
         const x = s.grid && s.grid.rows > 1 && e.grid;
         let E;
         x && e.grid.initSlides(u);
@@ -2255,8 +2255,8 @@
           }),
           s.centeredSlides && s.cssMode && !s.centeredSlidesBounds)
         ) {
-          A(e.wrapperEl, "--swiper-centered-offset-before", -h[0] + "px"),
-            A(
+          M(e.wrapperEl, "--swiper-centered-offset-before", -h[0] + "px"),
+            M(
               e.wrapperEl,
               "--swiper-centered-offset-after",
               e.size / 2 - g[g.length - 1] / 2 + "px"
@@ -2604,7 +2604,7 @@
           else {
             if (!o.support.smoothScroll)
               return (
-                k({ swiper: o, targetPosition: -c, side: e ? "left" : "top" }),
+                A({ swiper: o, targetPosition: -c, side: e ? "left" : "top" }),
                 !0
               );
             a.scrollTo({ [e ? "left" : "top"]: -c, behavior: "smooth" });
@@ -2766,7 +2766,7 @@
           } else {
             if (!o.support.smoothScroll)
               return (
-                k({ swiper: o, targetPosition: i, side: e ? "left" : "top" }),
+                A({ swiper: o, targetPosition: i, side: e ? "left" : "top" }),
                 !0
               );
             p.scrollTo({ [e ? "left" : "top"]: i, behavior: "smooth" });
@@ -3558,7 +3558,7 @@
             e.emitContainerClasses());
         const h = l.direction && l.direction !== n.direction,
           p = n.loop && (l.slidesPerView !== n.slidesPerView || h);
-        h && i && e.changeDirection(), M(e.params, l);
+        h && i && e.changeDirection(), P(e.params, l);
         const g = e.params.enabled;
         Object.assign(e, {
           allowTouchMove: e.params.allowTouchMove,
@@ -3757,9 +3757,9 @@
                   "enabled" in e[s] ||
                   (e[s].enabled = !0),
                 e[s] || (e[s] = { enabled: !1 }),
-                M(t, i))
-              : M(t, i))
-          : M(t, i);
+                P(t, i))
+              : P(t, i))
+          : P(t, i);
       };
     }
     const le = {
@@ -3895,14 +3895,14 @@
             ? (t = s[0])
             : ([e, t] = s),
           t || (t = {}),
-          (t = M({}, t)),
+          (t = P({}, t)),
           e && !t.el && (t.el = e),
           t.el && _(t.el).length > 1)
         ) {
           const e = [];
           return (
             _(t.el).each((i) => {
-              const s = M({}, t, { el: i });
+              const s = P({}, t, { el: i });
               e.push(new ce(s));
             }),
             e
@@ -3911,8 +3911,8 @@
         const o = this;
         (o.__swiper__ = !0),
           (o.support = G()),
-          (o.device = F({ userAgent: t.userAgent })),
-          (o.browser = V()),
+          (o.device = V({ userAgent: t.userAgent })),
+          (o.browser = F()),
           (o.eventsListeners = {}),
           (o.eventsAnyListeners = []),
           (o.modules = [...o.__modules__]),
@@ -3928,11 +3928,11 @@
             emit: o.emit.bind(o),
           });
         });
-        const a = M({}, re, r);
+        const a = P({}, re, r);
         return (
-          (o.params = M({}, a, de, t)),
-          (o.originalParams = M({}, o.params)),
-          (o.passedParams = M({}, t)),
+          (o.params = P({}, a, de, t)),
+          (o.originalParams = P({}, o.params)),
+          (o.passedParams = P({}, t)),
           o.params &&
             o.params.on &&
             Object.keys(o.params.on).forEach((e) => {
@@ -4274,7 +4274,7 @@
         );
       }
       static extendDefaults(e) {
-        M(de, e);
+        P(de, e);
       }
       static get extendedDefaults() {
         return de;
@@ -5242,6 +5242,50 @@
                 },
               },
             },
+          }),
+        document.querySelector(".resemble__swiper") &&
+          new ue(".product__resemble-body", {
+            modules: [pe, me, fe],
+            effect: "fade",
+            autoplay: { delay: 5e3, disableOnInteraction: !1 },
+            observer: !0,
+            observeParents: !0,
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            spaceBetween: 32,
+            autoHeight: !1,
+            speed: 800,
+            loop: !0,
+            lazy: !0,
+            breakpoints: {
+              320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !1 },
+              600: { slidesPerView: 2, spaceBetween: 20 },
+              692: { slidesPerView: 2, spaceBetween: 20 },
+              1268: { slidesPerView: 3, spaceBetween: 30 },
+            },
+            on: {},
+          }),
+        document.querySelector(".product__swiper") &&
+          new ue(".product__left", {
+            modules: [pe, me, fe],
+            effect: "fade",
+            autoplay: { delay: 3e3, disableOnInteraction: !1 },
+            observer: !0,
+            observeParents: !0,
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 32,
+            autoHeight: !1,
+            speed: 800,
+            loop: !0,
+            lazy: !0,
+            breakpoints: {
+              320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !1 },
+              600: { slidesPerView: 1, spaceBetween: 20 },
+              692: { slidesPerView: 1, spaceBetween: 20 },
+              1268: { slidesPerView: 1, spaceBetween: 30 },
+            },
+            on: {},
           });
     });
     new (i(732))({
@@ -5282,15 +5326,15 @@
       Oe = "lgSlideItemLoad",
       ze = "lgBeforeSlide",
       $e = "lgAfterSlide",
-      Me = "lgPosterClick",
-      Ae = "lgDragStart",
-      ke = "lgDragMove",
-      Pe = "lgDragEnd",
+      Pe = "lgPosterClick",
+      Me = "lgDragStart",
+      Ae = "lgDragMove",
+      ke = "lgDragEnd",
       De = "lgBeforeNextSlide",
       Be = "lgBeforePrevSlide",
       Ge = "lgBeforeClose",
-      Fe = "lgAfterClose",
-      Ve = {
+      Ve = "lgAfterClose",
+      Fe = {
         mode: "lg-slide",
         easing: "ease",
         speed: 400,
@@ -5970,7 +6014,7 @@
         return (
           (e.prototype.generateSettings = function (e) {
             if (
-              ((this.settings = we(we({}, Ve), e)),
+              ((this.settings = we(we({}, Fe), e)),
               this.settings.isMobile &&
               "function" == typeof this.settings.isMobile
                 ? this.settings.isMobile()
@@ -7008,7 +7052,7 @@
                   o && Math.abs(e.pageX - t.pageX) < 5)
                 ) {
                   var a = Ne(i.target);
-                  n.isPosterElement(a) && n.LGel.trigger(Me);
+                  n.isPosterElement(a) && n.LGel.trigger(Pe);
                 }
                 n.swipeDirection = void 0;
               }),
@@ -7057,7 +7101,7 @@
                   if (s) (s = !1), e.touchEnd(i, t, o);
                   else if (n) {
                     var r = Ne(o.target);
-                    e.isPosterElement(r) && e.LGel.trigger(Me);
+                    e.isPosterElement(r) && e.LGel.trigger(Pe);
                   }
                   (e.touchAction = void 0), (n = !1);
                 }
@@ -7085,7 +7129,7 @@
                       (e.outer.get().scrollLeft += 1),
                       (e.outer.get().scrollLeft -= 1),
                       e.outer.removeClass("lg-grab").addClass("lg-grabbing"),
-                      e.LGel.trigger(Ae))));
+                      e.LGel.trigger(Me))));
               }),
               Ne(window).on("mousemove.lg.global" + this.lgId, function (o) {
                 s &&
@@ -7093,14 +7137,14 @@
                   ((n = !0),
                   (i = { pageX: o.pageX, pageY: o.pageY }),
                   e.touchMove(t, i),
-                  e.LGel.trigger(ke));
+                  e.LGel.trigger(Ae));
               }),
               Ne(window).on("mouseup.lg.global" + this.lgId, function (o) {
                 if (e.lgOpened) {
                   var r = Ne(o.target);
                   n
-                    ? ((n = !1), e.touchEnd(i, t, o), e.LGel.trigger(Pe))
-                    : e.isPosterElement(r) && e.LGel.trigger(Me),
+                    ? ((n = !1), e.touchEnd(i, t, o), e.LGel.trigger(ke))
+                    : e.isPosterElement(r) && e.LGel.trigger(Pe),
                     s &&
                       ((s = !1),
                       e.outer.removeClass("lg-grabbing").addClass("lg-grab"));
@@ -7112,7 +7156,7 @@
             this.$inner.on("click.lg", function (t) {
               !e.dragOrSwipeEnabled &&
                 e.isPosterElement(Ne(t.target)) &&
-                e.LGel.trigger(Me);
+                e.LGel.trigger(Pe);
             });
           }),
           (e.prototype.manageSwipeClass = function () {
@@ -7355,7 +7399,7 @@
                   t.outer.removeClass("lg-closing " + t.settings.startClass),
                   t.getSlideItem(t.index).removeClass("lg-start-end-progress"),
                   t.$inner.empty(),
-                  t.lgOpened && t.LGel.trigger(Fe, { instance: t }),
+                  t.lgOpened && t.LGel.trigger(Ve, { instance: t }),
                   t.outer.get() && t.outer.get().blur(),
                   (t.lgOpened = !1);
               }, u + 100),
@@ -8509,10 +8553,10 @@
           return i.initCustomEvent(e, t.bubbles, t.cancelable, t.detail), i;
         };
       })();
-    var Mt = "slider__item_active",
-      At = "slider__control_show",
-      kt = "slider__indicators",
-      Pt = "slider__indicator",
+    var Pt = "slider__item_active",
+      Mt = "slider__control_show",
+      At = "slider__indicators",
+      kt = "slider__indicator",
       Dt = "slider__indicator_active",
       Bt = "transition-none";
     function Gt(e, t) {
@@ -8561,8 +8605,8 @@
         (i = this._$itemList[e]),
           (s = parseInt(i.dataset.index)),
           this._currentIndex === s
-            ? i.classList.add(Mt)
-            : i.classList.remove(Mt);
+            ? i.classList.add(Pt)
+            : i.classList.remove(Pt);
       var n = this._$root.querySelectorAll(".slider__indicator");
       if (n.length)
         for (e = 0, t = n.length; e < t; e++)
@@ -8574,13 +8618,13 @@
       var o = this._$root.querySelectorAll(".slider__control");
       if (o.length)
         if (this._config.loop)
-          for (e = 0, t = o.length; e < t; e++) o[e].classList.add(At);
+          for (e = 0, t = o.length; e < t; e++) o[e].classList.add(Mt);
         else
           0 === this._currentIndex
-            ? (o[0].classList.remove(At), o[1].classList.add(At))
+            ? (o[0].classList.remove(Mt), o[1].classList.add(Mt))
             : this._currentIndex === this._$itemList.length - 1
-            ? (o[0].classList.add(At), o[1].classList.remove(At))
-            : (o[0].classList.add(At), o[1].classList.add(At));
+            ? (o[0].classList.add(Mt), o[1].classList.remove(Mt))
+            : (o[0].classList.add(Mt), o[1].classList.add(Mt));
     }),
       (Gt.prototype._move = function () {
         if ("none" === this._direction)
@@ -8632,10 +8676,10 @@
       (Gt.prototype._addIndicators = function () {
         if (!this._$root.querySelector(".slider__indicators")) {
           var e = document.createElement("ol");
-          e.className = kt;
+          e.className = At;
           for (var t = 0, i = this._$itemList.length; t < i; t++) {
             var s = document.createElement("li");
-            (s.className = Pt), (s.dataset.slideTo = t), e.appendChild(s);
+            (s.className = kt), (s.dataset.slideTo = t), e.appendChild(s);
           }
           this._$root.appendChild(e);
         }
@@ -8854,10 +8898,10 @@
           t.click();
         });
     }
-    const Ft = document.querySelectorAll(".card-preview-slider");
-    Ft.length > 0 &&
+    const Vt = document.querySelectorAll(".card-preview-slider");
+    Vt.length > 0 &&
       (s.any()
-        ? Ft.forEach((e) => {
+        ? Vt.forEach((e) => {
             const t = e.querySelector(".swiper");
             new Swiper(t, {
               slidePreview: 1,
@@ -8893,7 +8937,7 @@
               window.location.href = i;
             }
           }),
-          Ft.forEach((e) => {
+          Vt.forEach((e) => {
             e.addEventListener("mouseleave", (e) => {
               const t = e.currentTarget,
                 i = t.querySelectorAll(".swiper-slide");

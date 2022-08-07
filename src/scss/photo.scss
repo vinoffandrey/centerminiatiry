@@ -1,0 +1,33 @@
+	.photo {
+
+		&__section {
+		}
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__body {
+			@include adaptiveValue("margin-top", 40, 20, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("margin-bottom", 80, 40, $containerWidth,$minWidth, 1);
+			display: grid!important;
+			row-gap: 30px;
+			column-gap: 30px;
+			grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+		}
+
+		&__item {
+			display: flex;
+			justify-content: center;
+		}
+
+		&__item-image {
+			cursor: pointer;
+			width: -webkit-fill-available;
+			height: auto;
+		}
+}
+.title {
+}

@@ -1,0 +1,162 @@
+.catalog {
+
+	&__section {
+	}
+
+	&__container {
+	}
+
+	&__title {
+	}
+
+	&__categories {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("margin-top", 40, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 40, 20, $containerWidth,$minWidth, 1);
+		@media(max-width: $mobile) {
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+	}
+
+	&__category {
+		@include adaptiveValue("width", 264, 130, $containerWidth,$minWidth, 1);
+		@media(max-width: $tablet) {
+			width: auto;
+			display: contents;
+		}
+		@media(max-width: $mobileSmall) {
+			flex: 1 1 100%; 
+		}
+	
+	}
+
+	&__category-button {
+		display: block;
+		text-transform: uppercase;
+		color: $greyColor;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 12, 12, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("line-height", 15, 15, $containerWidth,$minWidth, 1);
+		background-color: #ffffff;
+		border: 1px solid #EDEBDE;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		@include adaptiveValue("padding-top", 15, 10, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-right", 15, 10, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 15, 10, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-left", 15, 10, $containerWidth,$minWidth, 1);
+		transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+			border: 1px solid $yellowColor;
+			background-color: $yellowColor;
+			} 
+		}
+		@media(max-width: $tablet) {
+			@include adaptiveValue("padding-right", 34, 24, $containerWidth,$minWidth, 1);
+			@include adaptiveValue("padding-left", 34, 24, $containerWidth,$minWidth, 1);
+		}
+		@media(max-width: $mobile) { 
+			@include adaptiveValue("margin-bottom", 20, 10, $containerWidth,$minWidth, 1);
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		@media(max-width: $mobileSmall) {
+			width: 100%; 
+		}
+	}
+
+	&__body {
+		@include adaptiveValue("margin-bottom", 60, 30, $containerWidth,$minWidth, 1);
+	}
+
+	&__body-list {
+    display: grid!important;
+    row-gap: 50px;
+    column-gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+	}
+
+	&__body-item {
+		background-color: white;
+		border: 1px solid #EDEBDE;
+		border-radius: 5px;
+		transition: all .3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				border: 1px solid $yellowColor;
+			} 
+		}
+	}
+
+	&__body-link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__body-image {
+		max-width: 320px;
+		width: 100%;
+		height: 205px;
+		max-height: 205px;
+		min-height: 150px;
+		img {
+			padding: 15px;
+		}
+	}
+
+	&__body-title {
+		@include adaptiveValue("margin-top", 20, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 20, 15, $containerWidth,$minWidth, 1);
+	}
+
+	&__page-numbers {
+		display: flex;
+		justify-content: center;
+		@include adaptiveValue("margin-bottom", 60, 25, $containerWidth,$minWidth, 1);
+	}
+}
+.title {
+}
+.page {
+
+	&__numbers-list {
+		display: flex;
+	}
+
+	&__numbers-item {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__numbers-link {
+		
+		color: $greyColor;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #EDEBDE;
+		border-radius: 5px;
+		background-color: #fff;
+		@include adaptiveValue("font-size", 12, 12, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("line-height", 15, 15, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("width", 35, 30, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("height", 35, 30, $containerWidth,$minWidth, 1);
+		@media (any-hover: hover){
+			&:hover{
+				background-color: $yellowColor;
+				border: 1px solid $yellowColor;
+			} 
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.delivery {
+
+	&__section {
+		@include adaptiveValue("padding-top", 80, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("padding-bottom", 120, 40, $containerWidth,$minWidth, 1);
+	}
+
+	&__container {
+		border: 1px solid #EDEBDE;
+		border-radius: 5px;
+		background-color: #fff;
+		@include adaptiveValue("padding", 40, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__title {
+	}
+
+	&__body {
+		@include adaptiveValue("margin-top", 40, 20, $containerWidth,$minWidth, 1);
+	}
+
+	&__body-title {
+		font-weight: 700;
+		color: black;
+		@include adaptiveValue("font-size", 20, 18, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("line-height", 24, 20, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 15, 10, $containerWidth,$minWidth, 1);
+	}
+
+	&__body-text {
+		font-weight: 500;
+		color: $mainColor;
+		@include adaptiveValue("font-size", 15, 14, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("line-height", 30, 25, $containerWidth,$minWidth, 1);
+	}
+
+	&__body-paragraph {
+		font-weight: 500;
+		color: $mainColor;
+		@include adaptiveValue("font-size", 15, 14, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("line-height", 30, 25, $containerWidth,$minWidth, 1);
+		@include adaptiveValue("margin-bottom", 25, 15, $containerWidth,$minWidth, 1);
+	}
+}
+

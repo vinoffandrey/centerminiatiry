@@ -22,7 +22,6 @@
 	}
 }
 .title {
-	text-transform: uppercase;
 	color: black;
 	@include adaptiveValue("font-size", 30, 25, 1, $containerWidth, $minWidth, 1);
 	font-weight: 700;
